@@ -1,57 +1,93 @@
 #include "ship.h"
+#include "window.h"
 
-void Ship::rotation()
+Ship::Ship(double w, double ratio)
 {
-	static float mod = 0;
-	float rotMod = mod / 5 + 1;
+	// For each w, make ratio h
+	double h = w * ratio;
+
+	// Resize it to 4 points
+	body.setPointCount(4);
+
+	// Define the points
+	body.setPoint(0, Vector2f(w / 2, 0));
+	body.setPoint(1, Vector2f(0, h));
+	body.setPoint(2, Vector2f(w / 2, h / 1.5));
+	body.setPoint(3, Vector2f(w, h));
+
+	// Origin
+	body.setOrigin(w / 2, h / 2);
+
+	// Transparency
+	body.setFillColor(Color(0, 0, 0, 0));
+
+	// Set a 3-pixel wide white outline
+	body.setOutlineThickness(3.f);
+	body.setOutlineColor(Color(255, 255, 255));
+
+	// Set starting position
+	setPos(Vector2f(W_WIDTH / 2, W_HEIGHT / 2));
+}
+
+void Ship::move()
+{
+	static double mod = 0;
+	double rotMod = mod / 5 + 1;
 
 	if (Keyboard::isKeyPressed(Keyboard::Left))
 	{
-		convex.setRotation(convex.getRotation() - rotMod);
+		body.setRotation(body.getRotation() - rotMod);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Right))
 	{
-		convex.setRotation(convex.getRotation() + rotMod);
+		body.setRotation(body.getRotation() + rotMod);
 	}
 
-	double xVel = sin(degreesToRadians(convex.getRotation()));
-	double yVel = -cos(degreesToRadians(convex.getRotation()));
+	// directional velocities
+	double xVel = sin(degreesToRadians(body.getRotation()));
+	double yVel = -cos(degreesToRadians(body.getRotation()));
+
+	// acceleration
+	const static double accelerationSpeed = 0.05;
+	const static double maxMod = 5;
 
 	if (Keyboard::isKeyPressed(Keyboard::Up))
 	{
-		if (mod < 5)
-			mod += 0.05;
+		if (mod < maxMod)
+			mod += accelerationSpeed;
 	}
 	else
 	{
 		if (mod > 0)
-			mod -= 0.05;
+			mod -= accelerationSpeed;
 		if (mod < 0)
 			mod = 0;
 	}
 
-	convex.move(xVel * mod, yVel * mod);
+	body.move(xVel * mod, yVel * mod);
 }
 
-void Ship::shoot()
+Vector2f Ship::shoot()
 {
 	if (Keyboard::isKeyPressed(Keyboard::Space))
 	{
-		double xVel = sin(degreesToRadians(convex.getRotation()));
-		double yVel = -cos(degreesToRadians(convex.getRotation()));
+		double xVel = sin(degreesToRadians(body.getRotation()));
+		double yVel = -cos(degreesToRadians(body.getRotation()));
+
+		return Vector2f(xVel, yVel);
 	}
 
-	//return Projectile();
+	return Vector2f(0, 0);
 }
 
-void Ship::setPos(sf::Vector2f pos)
+void Ship::setPos(Vector2f pos)
 {
-	convex.setPosition(pos);
+	body.setPosition(pos);
 }
 
-sf::ConvexShape Ship::getDraw()
+ConvexShape Ship::getDraw()
 {
-	rotation();
+	move();
 	shoot();
-	return convex;
+	return body;
 }

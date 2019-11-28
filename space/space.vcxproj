@@ -19,17 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="asteroid.cpp" />
     <ClCompile Include="event.cpp" />
+    <ClCompile Include="generation.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="projectile.cpp" />
     <ClCompile Include="rotation.cpp" />
     <ClCompile Include="ship.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="asteroid.h" />
     <ClInclude Include="event.h" />
-    <ClInclude Include="projectile.h" />
     <ClInclude Include="rotation.h" />
     <ClInclude Include="ship.h" />
+    <ClInclude Include="window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
