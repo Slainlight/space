@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="asteroid.cpp" />
+    <ClCompile Include="camera.cpp" />
     <ClCompile Include="event.cpp" />
     <ClCompile Include="generation.cpp" />
     <ClCompile Include="main.cpp" />
@@ -28,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="asteroid.h" />
+    <ClInclude Include="camera.h" />
     <ClInclude Include="event.h" />
     <ClInclude Include="rotation.h" />
     <ClInclude Include="ship.h" />

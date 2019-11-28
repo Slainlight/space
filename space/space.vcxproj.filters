@@ -19,6 +19,9 @@
     <ClCompile Include="generation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="event.h">
@@ -34,6 +37,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="window.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

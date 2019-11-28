@@ -14,5 +14,7 @@ public:
 	void move();
 	Vector2f shoot();
 	void setPos(Vector2f pos);
+	Vector2f getPos();
+	double getRotation();
 	ConvexShape getDraw();
 };

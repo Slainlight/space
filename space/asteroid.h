@@ -18,4 +18,4 @@ public:
 	void setPos(Vector2f loc);
 };
 
-Asteroid asteroidTest();
+Asteroid asteroidTest(float size);

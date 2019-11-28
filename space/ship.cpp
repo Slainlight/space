@@ -32,7 +32,7 @@ Ship::Ship(double w, double ratio)
 void Ship::move()
 {
 	static double mod = 0;
-	double rotMod = mod / 5 + 1;
+	double rotMod = mod / 5 + 0.5;
 
 	if (Keyboard::isKeyPressed(Keyboard::Left))
 	{
@@ -64,7 +64,15 @@ void Ship::move()
 			mod = 0;
 	}
 
-	body.move(xVel * mod, yVel * mod);
+	if (!Keyboard::isKeyPressed(Keyboard::Down))
+	{
+		body.move(xVel * mod, yVel * mod);
+	}
+	else
+	{
+		body.move(-xVel, -yVel);
+		mod = 0;
+	}
 }
 
 Vector2f Ship::shoot()
@@ -83,6 +91,16 @@ Vector2f Ship::shoot()
 void Ship::setPos(Vector2f pos)
 {
 	body.setPosition(pos);
+}
+
+Vector2f Ship::getPos()
+{
+	return body.getPosition();
+}
+
+double Ship::getRotation()
+{
+	return (double)body.getRotation();
 }
 
 ConvexShape Ship::getDraw()

@@ -26,8 +26,8 @@ Asteroid::Asteroid(double s)
 	body.setOutlineThickness(s / 20 + 1);
 	body.setOutlineColor(Color(255, 255, 255));
 
-	// Transparency? Maybe? Nah for now
-	body.setFillColor(Color(0, 0, 0, 255));
+	// Transparency is cool
+	body.setFillColor(Color(0, 0, 0, 0));
 }
 
 void Asteroid::setPos(Vector2f loc)
@@ -36,16 +36,16 @@ void Asteroid::setPos(Vector2f loc)
 }
 
 // All temporary for tests!
-Asteroid asteroidTest()
+Asteroid asteroidTest(float size)
 {
 	// Test for asteroid drawing
 	static bool single = true;
-	static Asteroid test(50);
+	static Asteroid test(size);
 
 	// Trying variation with new objects
 	if (Keyboard::isKeyPressed(Keyboard::R) && single == true)
 	{
-		test = Asteroid(50);
+		test = Asteroid(size);
 		single = false;
 	}
 	else if (!Keyboard::isKeyPressed(Keyboard::R))
