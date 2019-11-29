@@ -4,6 +4,7 @@
 #include "asteroid.h"
 #include "window.h"
 #include "camera.h"
+#include "generation.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
@@ -29,6 +30,8 @@ int main()
 	window.setFramerateLimit(144);
 
 	Ship player(30);
+	player.setPos(Vector2f(5000, 5000));
+	AsteroidCluster* test = new AsteroidCluster(Vector2f(0,0), Vector2f(10000, 10000));
 
 	Camera c = Camera(player, window);
 
@@ -40,9 +43,10 @@ int main()
 
 		window.clear();
 		window.draw(player.getDraw());
-		window.draw(asteroidTest(80).body);
+		test->draw(window);
 		window.display();
 	}
 
+	delete test;
 	return 0;
 }

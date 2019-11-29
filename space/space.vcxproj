@@ -31,6 +31,7 @@
     <ClInclude Include="asteroid.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="event.h" />
+    <ClInclude Include="generation.h" />
     <ClInclude Include="rotation.h" />
     <ClInclude Include="ship.h" />
     <ClInclude Include="window.h" />
