@@ -5,6 +5,10 @@ Asteroid::Asteroid(double s)
 	int totalPoints = 16;
 	size = s;
 
+	// random velocity
+	randomVel.x = (rand() % 30) - 15;
+	randomVel.y = (rand() % 30) - 15;
+
 	// s for size
 	body.setPointCount(totalPoints);
 
@@ -27,7 +31,7 @@ Asteroid::Asteroid(double s)
 	body.setOutlineColor(Color(255, 255, 255));
 
 	// Transparency is cool
-	body.setFillColor(Color(0, 0, 0, 0));
+	body.setFillColor(Color(0, 0, 0, 255));
 }
 
 void Asteroid::setPos(Vector2f loc)

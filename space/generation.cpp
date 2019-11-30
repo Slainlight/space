@@ -8,12 +8,17 @@ AsteroidCluster::AsteroidCluster(Vector2f o, Vector2f s)
 	createAllRandomizedAsteroids();
 }
 
-void AsteroidCluster::draw(RenderWindow& w)
+void AsteroidCluster::draw(RenderWindow& w, sf::ConvexShape p)
 {
 	for (int i = 0; i < totalAstroids; i++)
 	{ 
 		collection[i].body.rotate(0.25*((float)i / (float)totalAstroids));
 		w.draw(collection[i].body);
+		
+		collection[i].body.move(collection[i].randomVel.x/30, collection[i].randomVel.y / 30);
+
+		if ((int)(totalAstroids / 2) == i)
+			w.draw(p);
 	}
 		
 }

@@ -9,6 +9,7 @@ class Asteroid
 {
 public:
 	ConvexShape body;
+	Vector2f randomVel;
 	int size = 0;
 
 	Asteroid() {}

@@ -19,7 +19,7 @@ Ship::Ship(double w, double ratio)
 	body.setOrigin(w / 2, h / 2);
 
 	// Transparency
-	body.setFillColor(Color(0, 0, 0, 0));
+	body.setFillColor(Color(255, 255, 255, 255));
 
 	// Set a 3-pixel wide white outline
 	body.setOutlineThickness(3.f);

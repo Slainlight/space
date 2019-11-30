@@ -17,6 +17,7 @@ using namespace std;
 // - Lots of foreseeable collision work...
 // - Finish asteroid generation
 // - Gravity functionality??
+// - Get better memory utilization
 
 int main()
 {
@@ -42,8 +43,8 @@ int main()
 		c.update();
 
 		window.clear();
-		window.draw(player.getDraw());
-		test->draw(window);
+		//window.draw(player.getDraw());
+		test->draw(window, player.getDraw());
 		window.display();
 	}
 

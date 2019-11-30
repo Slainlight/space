@@ -12,7 +12,7 @@ private:
 public:
 	AsteroidCluster(Vector2f o, Vector2f s);
 	void createAllRandomizedAsteroids();
-	void draw(RenderWindow& w);
+	void draw(RenderWindow& w, sf::ConvexShape p);
 	void addAstroid(Asteroid a);
 	Asteroid generate();
 };
