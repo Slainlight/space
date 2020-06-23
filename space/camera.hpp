@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "ship.h"
-#include "window.h"
+#include "ship.hpp"
+#include "window.hpp"
 
 using namespace sf;
 

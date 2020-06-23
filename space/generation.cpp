@@ -1,4 +1,4 @@
-#include "generation.h"
+#include "generation.hpp"
 
 
 AsteroidCluster::AsteroidCluster(Vector2f o, Vector2f s)

@@ -1,4 +1,4 @@
-#include "rotation.h"
+#include "rotation.hpp"
 double degreesToRadians(double angleDegrees)
 {
 	return (angleDegrees * PI / 180.0);

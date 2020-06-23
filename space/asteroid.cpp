@@ -1,4 +1,4 @@
-#include "asteroid.h"
+#include "asteroid.hpp"
 
 Asteroid::Asteroid(double s)
 {

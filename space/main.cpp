@@ -1,10 +1,10 @@
-#include "event.h"
-#include "ship.h"
-#include "rotation.h"
-#include "asteroid.h"
-#include "window.h"
-#include "camera.h"
-#include "generation.h"
+#include "event.hpp"
+#include "ship.hpp"
+#include "rotation.hpp"
+#include "asteroid.hpp"
+#include "window.hpp"
+#include "camera.hpp"
+#include "generation.hpp"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 

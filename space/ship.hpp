@@ -1,6 +1,7 @@
 #pragma once
+#include <cmath>
+#include "rotation.hpp"
 #include <SFML/Graphics.hpp>
-#include "rotation.h"
 
 using namespace sf;
 
@@ -10,7 +11,7 @@ private:
 	ConvexShape body;
 
 public:
-	Ship::Ship(double w, double ratio = 1.6);
+	Ship(double w, double ratio = 1.6);
 	void move();
 	Vector2f shoot();
 	void setPos(Vector2f pos);

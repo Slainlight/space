@@ -1,5 +1,5 @@
-#include "ship.h"
-#include "window.h"
+#include "ship.hpp"
+#include "window.hpp"
 
 Ship::Ship(double w, double ratio)
 {

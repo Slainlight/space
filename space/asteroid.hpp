@@ -1,6 +1,6 @@
 #pragma once
-
-#include "rotation.h"
+#include <cmath>
+#include "rotation.hpp"
 #include <SFML/Graphics.hpp>
 
 using namespace sf;

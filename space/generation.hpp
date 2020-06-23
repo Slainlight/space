@@ -1,6 +1,6 @@
 #pragma once
-#include "asteroid.h"
-#include "window.h"
+#include "asteroid.hpp"
+#include "window.hpp"
 class AsteroidCluster
 {
 private:
