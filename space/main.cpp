@@ -28,7 +28,7 @@ int main()
 	settings.antialiasingLevel = 8;
 
 	RenderWindow window(sf::VideoMode(W_WIDTH, W_HEIGHT), "Space!", sf::Style::Default, settings);
-	window.setFramerateLimit(144);
+	window.setFramerateLimit(60);
 
 	Ship player(30);
 	player.setPos(Vector2f(5000, 5000));

@@ -28,13 +28,13 @@
     <ClCompile Include="ship.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="asteroid.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="event.h" />
-    <ClInclude Include="generation.h" />
-    <ClInclude Include="rotation.h" />
-    <ClInclude Include="ship.h" />
-    <ClInclude Include="window.h" />
+    <ClInclude Include="asteroid.hpp" />
+    <ClInclude Include="camera.hpp" />
+    <ClInclude Include="event.hpp" />
+    <ClInclude Include="generation.hpp" />
+    <ClInclude Include="rotation.hpp" />
+    <ClInclude Include="ship.hpp" />
+    <ClInclude Include="window.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

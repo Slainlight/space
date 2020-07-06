@@ -24,34 +24,34 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="event.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="rotation.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="ship.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="asteroid.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="window.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="generation.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Headers">
       <UniqueIdentifier>{62a4654a-c758-4274-b4b2-03f7f0a07b0e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{609ec944-7abe-4706-8644-948b43ef87ad}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rotation.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ship.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="window.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="asteroid.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="event.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="generation.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

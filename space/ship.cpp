@@ -31,48 +31,25 @@ Ship::Ship(double w, double ratio)
 
 void Ship::move()
 {
-	static double mod = 0;
-	double rotMod = mod / 5 + 0.5;
+	double timed = regulate.getElapsedTime().asSeconds();
+
+	const double rotspeed = 200;
+	double rotmod = rotspeed * timed;
+
+	const double movespeed = 2000;
+	double movemod = movespeed * timed;
+
+	double xVel = sin(degreesToRadians(body.getRotation())) * movemod;
+	double yVel = -cos(degreesToRadians(body.getRotation())) * movemod;
 
 	if (Keyboard::isKeyPressed(Keyboard::Left))
-	{
-		body.setRotation(body.getRotation() - rotMod);
-	}
+		body.setRotation(body.getRotation() - rotmod);
 	if (Keyboard::isKeyPressed(Keyboard::Right))
-	{
-		body.setRotation(body.getRotation() + rotMod);
-	}
-
-	// directional velocities
-	double xVel = sin(degreesToRadians(body.getRotation()));
-	double yVel = -cos(degreesToRadians(body.getRotation()));
-
-	// acceleration
-	const static double accelerationSpeed = 0.05;
-	const static double maxMod = 5;
-
+		body.setRotation(body.getRotation() + rotmod);
 	if (Keyboard::isKeyPressed(Keyboard::Up))
-	{
-		if (mod < maxMod)
-			mod += accelerationSpeed;
-	}
-	else
-	{
-		if (mod > 0)
-			mod -= accelerationSpeed;
-		if (mod < 0)
-			mod = 0;
-	}
+		body.move(xVel, yVel);
 
-	if (!Keyboard::isKeyPressed(Keyboard::Down))
-	{
-		body.move(xVel * mod, yVel * mod);
-	}
-	else
-	{
-		body.move(-xVel, -yVel);
-		mod = 0;
-	}
+	regulate.restart();
 }
 
 Vector2f Ship::shoot()

@@ -9,7 +9,7 @@ class Ship
 {
 private:
 	ConvexShape body;
-
+	sf::Clock regulate;
 public:
 	Ship(double w, double ratio = 1.6);
 	void move();
